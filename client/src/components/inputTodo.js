@@ -10,7 +10,7 @@ const InputTodo = () => {
         e.preventDefault()
         try{
             const body = { description }
-            const response = await fetch('/todos',{
+            const response = await fetch('https://postgres-learning-w-express.herokuapp.com/todos',{
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
@@ -19,7 +19,6 @@ const InputTodo = () => {
             window.location = '/'
         } catch(error) {
             console.error('Exception ' + error);
-            window.open('https://stackoverflow.com/search?q=[js]' + error.message, '_blank');
         }
     }
 

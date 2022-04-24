@@ -8,7 +8,7 @@ const ListTodos = () =>{
     //delete fn
     const DeleteTodo = async (id) => {
         try{
-            const deleteTodo = await fetch(`/todos/${id}`, {
+            const deleteTodo = await fetch(`https://postgres-learning-w-express.herokuapp.com/todos/${id}`, {
                 method: "DELETE"
             }) 
 
@@ -20,7 +20,7 @@ const ListTodos = () =>{
 
     const getTodos = async () => {
         try{
-            const response = await fetch('/todos')
+            const response = await fetch('https://postgres-learning-w-express.herokuapp.com/todos')
             const jsonData = await response.json()
 
             setTodos(jsonData)
